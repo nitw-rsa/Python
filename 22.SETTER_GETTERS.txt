@@ -1,0 +1,50 @@
+class rishabh:
+    def __init__(self, age, saving):
+        self._age = age
+        self._saving = saving
+
+    def print_info(self):
+        print("AGE IS: " + str(self.age))
+        print("SAVINGS ARE:" + str(self.saving))
+
+    @property
+    def age(self):
+        return self._age
+
+    @property
+    def saving(self):
+        return self._saving
+
+if __name__ == "__main__":
+    obj = rishabh(40, 500000000)
+    print(obj.age)
+
+
+class rishabh:
+    def __init__(self, age, saving):
+        self._age = age
+        self._saving = saving
+
+    def print_info(self):
+        print("AGE IS: " + str(self.age))
+        print("SAVINGS ARE:" + str(self.saving))
+
+    @property
+    def age(self):
+        return self._age
+
+    @property
+    def saving(self):
+        return self._saving
+
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    @saving.setter
+    def saving(self, saving):
+        self._saving = saving
+
+if __name__ == "__main__":
+    obj = rishabh(40, 500000000)
+    obj.print_info()

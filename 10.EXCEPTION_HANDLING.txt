@@ -1,0 +1,14 @@
+Exception handline using try except and raise-
+
+try:
+	pass
+
+except IndexError:
+	print()
+	raise
+
+
+In python, you can also use else clause on try-except block which must be present after all the except clauses. The code enters the else block only if the try clause does not raise an exception.
+
+
+Try startment has a clause called finally which is used for cleanup activities. Finally will always run weather exception is raise or not.
