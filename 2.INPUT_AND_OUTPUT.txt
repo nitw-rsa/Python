@@ -1,8 +1,0 @@
-Taking multiple inputs in a single line-
-	input().split(sep, maxsplit)
-	[ int(x) for x in input().split()]
-
-
-In python 2.x
-input()     ----- Just pass as it is and evaluate (Vulnerability in input() function in python 2.x)
-raw_input() ----- Converts every input to string by default
