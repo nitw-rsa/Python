@@ -1,0 +1,29 @@
+Each thread contains its own register set and local variables.
+
+
+import threading
+
+def print_cube(num):
+	print("Cube: {}".format(num * num * num))
+
+def print_square(num):
+	print("Square: {}".format(num * num))
+
+if __name__ == "__main__":
+	t1 = threading.Thread(target=print_square, args=(10,)) 
+	t2 = threading.Thread(target=print_cube, args=(10,)) 
+
+	t1.start() 
+	t2.start() 
+
+	# wait until thread 1 is completely executed 
+	t1.join() 
+	# wait until thread 2 is completely executed 
+	t2.join() 
+
+	# both threads completely executed 
+	print("Done!") 
+
+
+Demon threads are the threads which runs completely in the background and they exists once main program exits.
+Here main thread should no need to wait for child threads to complete.

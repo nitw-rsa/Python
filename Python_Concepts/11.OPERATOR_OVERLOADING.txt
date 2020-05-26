@@ -1,0 +1,29 @@
+To perform operator overloading, Python provides some special function or magic function that is automatically invoked when it is associated with that particular operator.
+
+Overload + operator-
+
+# Python Program illustrate how to overload an binary + operator
+
+class A: 
+	def __init__(self, a): 
+		self.a = a 
+
+	def __add__(self, o): 
+		return self.a + o.a
+ob1 = A(1) 
+ob2 = A(2) 
+ob3 = A("Geeks") 
+ob4 = A("For") 
+
+print(ob1 + ob2) 
+print(ob3 + ob4) 
+
+
+All operators have one magic method associated with it.
+
+
+Python program to demonstrate ternary operator
+a, b = 10, 20
+  
+Use tuple for selecting an item
+print( (b, a) [a < b] )

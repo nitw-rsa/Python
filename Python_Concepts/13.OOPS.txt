@@ -1,0 +1,8 @@
+Instance variables are the variables whose values are assigned in constructor and variables defined under class are called class level variables.
+Instance variables can also be defined under normal functions.
+
+
+Method overriding- when same method is re-defined in child class.
+
+
+To change class variables always use the class name instead of object. If you cahnge it via object it will create a local copy of that variable and shadows the class variable.
