@@ -1,0 +1,60 @@
+Underscore in python-
+
+1.) Single Underscore-
+
+a.) in interpreter- returns value of last excuted expression
+b.) after a name- to avoid confusion between reserved keywords and user defined variable names
+c.) before a name- 
+
+
+2.) Double Underscore-
+
+a.) leading double
+b.) before and after both- used for operator overloading
+
+
+Before a name single underscore-
+Considered as a Non Public API. It indicates that it is for internal use only that can be modified whenever class wants.
+From import *- this will not able to import that name but directly we can import- Weak Private
+
+
+class A:
+	def __init__(self, x, y):
+		self.x = x
+		self._y = y
+
+a = A(5,10)
+
+class B(A):
+	def __init__(self, x, y):
+		 super().__init__(x, y)
+
+class C(B):
+	def __init__(self, x, y):
+		 super().__init__(x, y)
+
+c = C(100, 200)
+print(c._y)
+
+
+Double underscore leading-
+Rewrites name in order to avoid conflict in subclass. This is called as mangling.
+
+obj._classname__variablename
+
+class A:
+	def __init__(self, x, y):
+		self.x = x
+		self.__y = y
+
+class B(A):
+    def __init__(self, x, y):
+        super().__init__(x, y)
+
+class C(B):
+    def __init__(self, x, y):
+        super().__init__(x, y)
+        self.__y = 1000
+
+c = C(100, 200)
+print(c._C__y)

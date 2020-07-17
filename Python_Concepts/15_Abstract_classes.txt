@@ -1,0 +1,41 @@
+Abstract classes are the classes which contains one or more than one abstract methods.
+Abstract methods are the methods which are decalred but have no implementation.
+Abstract classes can not instantiated, and require subclasses to provide implementations for the abstract methods.
+
+
+Subclasses of an abstract class in Python are not required to implement abstract methods of the parent class.
+
+class AbstractClass:
+    
+    def do_something(self):
+        pass
+
+class B(AbstractClass):
+    pass
+
+a = AbstractClass()
+b = B()
+
+Here AbstractClass is not a valid abstractclass.
+
+
+Now this becomes abstract class-
+
+from abc import ABC, abstractmethod
+
+class AbstractClass(ABC):
+    
+	@abstractmethod
+	def do_something(self):
+		pass
+
+class B(AbstractClass):
+    pass
+
+a = AbstractClass()
+b = B()
+
+
+A class that is derived from an abstract class can not be instantiated unless all of its abstract methods are overridden. An abstract method can have an implementation in the abstract class! Even if they are implemented, designers of subclasses will be forced to override the implementation.
+
+Abstract class can have comnbination of both abstract and normal methods.

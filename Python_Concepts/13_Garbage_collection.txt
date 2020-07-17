@@ -1,0 +1,10 @@
+Garbage collection-
+	referance counting
+	garbage collection
+
+
+import gc
+collected = gc.collect()
+
+
+Time based or event based.

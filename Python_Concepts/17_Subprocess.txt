@@ -1,0 +1,24 @@
+python subprocess allows to spawn a new process and get their return codes.
+
+import subprocess
+
+cmd = ["java", "--version"]
+
+try:
+    ret = subprocess.run(cmd, capture_output=True)
+    print(ret.returncode)
+    print("----------------------")
+    print(ret.stderr)
+    print("----------------------")
+    print(ret.stdout)
+    print("----------------------")
+    print(ret)
+except subprocess.CalledProcessError as e:
+    raise RuntimeError(e)
+
+
+
+Subprocess.run = Popen() + commuicate()
+
+
+Subprocess run waits until process finishes.

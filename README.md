@@ -1,1 +1,1 @@
-# Python-Concepts
+# This repo contains python tutorials and some python scripts

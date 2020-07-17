@@ -1,0 +1,29 @@
+String ----- "" or ''
+	immutable so Hashable
+
+
+List ----- []
+	mutable so not Hashable
+	.append()
+	.insert(val, pos)
+	.extend()
+	.pop() ----- remove last element
+	.pop(x) ----- remove xth position element
+	.remove(x) ----- remove particular element
+
+
+Tuple ----- ()
+	immutable so Hashable
+	tuple(list) ----- convert list to tuple
+
+
+Set ----- set()
+	unordered
+	iterable
+	mutable
+
+
+Dictionary ----- {}
+	dict({'1':2})
+	.get(key, default_value)
+	dict([(1, 'geeks'), (2, 'rishabh')])

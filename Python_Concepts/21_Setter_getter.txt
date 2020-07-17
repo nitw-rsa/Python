@@ -1,0 +1,36 @@
+class person:
+    def __init__(self, name, mobile, age):
+        self._name = name
+        self.mobile = mobile
+        self._age = age
+
+    def print_info(self):
+        self.age = 90
+        print(f"Name is: {self.name} and age is: {self.age}")
+
+    @property
+    def age(self):
+        return self._age
+
+    @property
+    def name(self):
+        return self._name
+
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    @age.getter
+    def age(self):
+        return self._age
+
+obj = person("Rishabh", "8439217835", 27)
+obj.print_info()
+obj.age=100
+print(obj.age)
+
+
+If both property and getter is present then getter is invoked.
+
+
+Setters and getters will be invoked when that variable is assigned some value or get the value from variable.

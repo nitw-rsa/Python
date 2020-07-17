@@ -1,0 +1,29 @@
+Taking multiple inputs in a single line-
+	input().split(sep, maxsplit) ----- this returns a list
+	[ int(x) for x in input().split()]
+
+
+In python 2.x
+input()     ----- Just pass as it is and evaluate (Vulnerability in input() function in python 2.x)
+raw_input() ----- Converts every input to string by default
+
+
+In python 3.x
+input()     ----- Converts everything to string by default
+
+
+To print any custom string in python 3.x
+mobile = 843921
+print(f"my name is rishabh and my mobile number is {mobile}")
+
+class intro:
+    def __init__(self, name, mobile):
+        self.name = name
+        self.mobile = mobile
+
+    def __repr__(self):
+        return f"{self.name} works for a Company and has mobile number {self.mobile}"
+
+
+obj = intro("Rishabh", "1234567890")
+print(f"{obj}")

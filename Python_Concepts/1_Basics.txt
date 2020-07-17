@@ -1,0 +1,46 @@
+In python 2.x implict string type is ASCII but in python 3.x implict str type is unicode.
+
+
+In python 2.x
+	range()  ----- returns a list
+	xrange() ----- returns a iterator object
+
+
+In python 3.x
+	range()  ----- same as xrange() of python 2
+	xrange() ----- does not exist
+
+
+Global and Non local variables-
+	non-local variable can only be bound to outer function.
+
+	a = 100
+	
+	def outer():
+		a = 5
+		def inner():
+			global a
+			a = 10
+		inner()
+		print(a)
+	
+	outer()
+	print(a)----10
+	
+	a = 100
+	
+	def outer():
+		a = 5
+		def inner():
+			nonlocal a
+			a = 10
+		inner()
+		print(a)
+	
+	outer()
+	print(a)----5
+
+
+Namespace is a system to have a unique name for each and every object in python.
+Namespace- Accessibility
+Scope- Lifetime

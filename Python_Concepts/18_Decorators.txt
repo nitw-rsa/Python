@@ -1,0 +1,117 @@
+In python functions are the first class objects-
+	They can be passes, assigned and returned from a function.
+	Can be defined inside another functions.
+
+
+Decorators are used to wrap another function in order to extend the behaviour of wrapped function-
+
+@function_decorator
+def function1():
+	print("inside function1")
+
+function1 = function_decorator(function1)
+
+
+def wrapped_function():
+	print("Rishabh Sharma")
+
+wrapped_function()
+
+Now suppose I want to add some thing to print around Rishabh Sharma without changing this wrapped_function-
+
+def function_decorator(func):
+	def inner_function():
+		print("The one and only")
+		func()
+		print("The Rock")
+	return inner_function
+
+@function_decorator
+def wrapped_function():
+	print("Rishabh Sharma")
+
+wrapped_function()
+
+
+If function is returing something-
+
+def function_decorator(func):
+	def inner_function():
+		print("The one and only")
+		print(func())
+		print("The Rock")
+	return inner_function
+
+@function_decorator
+def wrapped_function():
+	return "Rishabh Sharma"
+
+wrapped_function()
+
+OR
+
+def function_decorator(func):
+	def inner_function():
+		print("The one and only")
+		dd = func()
+		print("The Rock")
+		return dd
+	
+	return inner_function
+
+@function_decorator
+def wrapped_function():
+	return "Rishabh Sharma"
+
+print(wrapped_function())
+
+
+Decorators when function have some parameters:-
+
+def function_decorator(func):
+	def inner_function(i, j):
+		print("Before Execution")
+		dd = func(i, j)
+		print("After Execution")
+		return dd
+		
+	return inner_function
+
+@function_decorator
+def wrapped_function(a, b):
+	return a+b
+
+print(wrapped_function(100, 200))
+
+
+With the help of decorators we can add data or attributes to the functions-
+
+def attach_data(func):
+	func.data = 3
+	return func
+
+@attach_data
+def add(a, b):
+	print(add.data)
+	return a+b
+
+print(add(100, 200))
+
+
+Decorators with parameters:-
+
+def my_decorator(*args, **kwargs):
+	print("Inside decorator")
+	
+	def inner_function(my_function1):
+		print("Inside inner function")
+		print(kwargs["dream"])
+		return my_function1
+
+	return inner_function
+
+@my_decorator(1,2, dream="xyz")
+def my_function():
+	print("Hello Rishabh Sharma")
+
+my_function()
